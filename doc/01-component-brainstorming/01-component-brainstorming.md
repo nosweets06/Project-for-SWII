@@ -225,7 +225,7 @@ will likely refine your design to make your implementation easier to use.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - I am unsure about this currently depends on how I implement the methods later on.
+      - I am unsure about this currently depends on how I implement the methods later on. But it will possibly be mutable since the size of the playlist would need to change like if a method was called to add or remove then it would need to be able to change the playlist.
 
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
@@ -239,47 +239,68 @@ will likely refine your design to make your implementation easier to use.
       Answer, explain, and give at least one example:
       - yes I could as PlaySong would mostly likely go with shuffle and playAll or at least in a similar fashion. getSong would also tie with duration (depending if duration is the total playlist time or song time).
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Art Application
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Holds infomation about a digital art such as colors used, and the layout path (with layers)
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+    -addColor(color)
+    -removeColor(color)
+    -getColor
+    -hasColor(color)
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    -addLayer()
+    -removeLayer()
+    -moveLayer()
+    -getOrder
+
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - mostUsedColor()
+    -colorPalette()
+    -dupLayer()
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Not sure
+
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes maybe Map to pair colors with their RYB code and maybe set or sequence(unsure if ordered yet)
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Not sure
+
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      -Yes addColor and mostUsedColor as you would need to keep track of colors added to get the most used
+
+- Component Design #3: Calorie Tracker
+  - **Description**:
+    - Tracks calories burned/ gained.
+  - **Kernel Methods**:
+    - addCal()
+    -removeCal()
+    -getTotal()
+  - **Secondary Methods**:
+    - isGoalMet()
+    -getWeekSum
+    -getMonthSum
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - Not sure, but would msot likely becuase it would act simmilar to natural number ie. need to be able to change values
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - No? Not sure on this one
+
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - I don't know
+
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Yes getTotal would work into getWeekSum and getMonthSum as these secardony would keep track of the daily totals to get a sum.
 
 ## Post-Assignment
 
