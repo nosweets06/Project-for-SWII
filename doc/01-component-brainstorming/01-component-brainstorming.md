@@ -245,19 +245,22 @@ will likely refine your design to make your implementation easier to use.
   - **Kernel Methods**:
     -addColor(color)
     -removeColor(color)
-    -getColor
-    -hasColor(color)
+
 
     -addLayer()
     -removeLayer()
-    -moveLayer()
-    -getOrder
+    -LayerNumber()
+
 
 
   - **Secondary Methods**:
     - mostUsedColor()
     -colorPalette()
     -dupLayer()
+    -getColor
+    -hasColor(color)
+    -moveLayer()
+    -getOrder
 
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
@@ -348,7 +351,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
