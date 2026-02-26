@@ -7,11 +7,15 @@ and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
 
-## 2026.02.03
+## 2026.02.26
 
 ### Added
 
-- Designed a Music Playlist component
-- Designed a Art Application component
-- Designed a Calorie Tracker component
+- Designed a proof of concept for MusicPlaylist component
+
+### Updated
+
+- Created interfaces (MusicPLaylist and Kernel), abstract (Secondary) and classes (Song and 1L).
+- Created contracts and implemented methods.
+
 ```
