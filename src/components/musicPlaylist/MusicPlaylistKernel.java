@@ -1,9 +1,11 @@
 package components.musicPlaylist;
 
+import components.standard.Standard;
+
 /**
  * Primary methods.
  */
-public interface MusicPlaylistKernel {
+public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
 
     /**
      * Add song {@code s} to {@code this}.
@@ -34,19 +36,15 @@ public interface MusicPlaylistKernel {
      * @requires {@code this} > 0
      * @ensures |#this| = |this| - 1
      */
-    Song removeSong(String s);
+    Song removeSong(int s);
 
     /**
-     * Get specific Song in {@code this}.
+     * Returns number of songs in {@code this}
      *
-     * @param s
-     *            key to find Song.
-     *
-     * @return the song.
+     * @return number of songs.
      * @requires {@code this} > 0
-     * @ensures (returns song)
      */
-    Song getSong(String s);
+    int numberOfSongs();
 
     /**
      * Play specific Song in {@code this}.

@@ -43,12 +43,11 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * Returns time duration of {@code x} in {@code this}.
      *
      * @param x
-     *            given name to search
+     *            given index to search
      * @return time
      * @requires x in {@code this}
      * @ensures ?
      */
-
     int duration(int x);
 
     /**
@@ -58,7 +57,17 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * @requires x in {@code this}
      * @ensures ?
      */
-
     int totalDuration();
+
+    /**
+     * Returns infomation about song in {@code this}.
+     *
+     * @param x
+     *            given index to search
+     * @return time
+     * @requires x in {@code this}
+     * @ensures ?
+     */
+    Song getSong(int x);
 
 }
