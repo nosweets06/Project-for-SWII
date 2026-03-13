@@ -18,7 +18,7 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * @requires x in {@code this}
      * @ensures x is string, |x| > 0
      */
-    String findSong(int x);
+    int findSongPosition(String x);
 
     /**
      * Randomizes order of songs in {@code this}.
@@ -31,42 +31,13 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
     void shuffle();
 
     /**
-     * Plays all songs in {@code this}.
-     *
-     * @requires |this| > 0
-     * @ensures (I want to say all songs are looped through but im not sure how
-     *          to write in contract formal way oops)
-     */
-    void playAll();
-
-    /**
-     * Returns time duration of {@code x} in {@code this}.
-     *
-     * @param x
-     *            given index to search
-     * @return time
-     * @requires x in {@code this}
-     * @ensures ?
-     */
-    int duration(int x);
-
-    /**
-     * Returns time duration of {@code this}.
-     *
-     * @return time
-     * @requires x in {@code this}
-     * @ensures ?
-     */
-    int totalDuration();
-
-    /**
      * Returns infomation about song in {@code this}.
      *
      * @param x
      *            given index to search
      * @return time
-     * @requires x in {@code this}
-     * @ensures ?
+     * @requires x in {@code this} and {@code this} > 0
+     * @ensures (returns song)
      */
     Song getSong(int x);
 

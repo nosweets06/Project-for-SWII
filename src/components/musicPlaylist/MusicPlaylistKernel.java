@@ -24,7 +24,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
      * @requires {@code this} > 0
      * @ensures |#this| = |this| - 1
      */
-    Song removeSong();
+    Song removeLastSong();
 
     /**
      * Removes speecfic Song in {@code this}.
@@ -39,21 +39,11 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
     Song removeSong(int s);
 
     /**
-     * Returns number of songs in {@code this}
+     * Returns number of songs in {@code this}.
      *
      * @return number of songs.
      * @requires {@code this} > 0
      */
     int numberOfSongs();
-
-    /**
-     * Play specific Song in {@code this}.
-     *
-     * @param s
-     *            key to find Song.
-     *
-     *
-     */
-    void playSong(String s);
 
 }

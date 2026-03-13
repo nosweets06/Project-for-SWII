@@ -7,15 +7,13 @@ and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
 
-## 2026.02.26
+## 2026.11.26
 
 ### Added
 
-- Designed a proof of concept for MusicPlaylist component
+- Designed kernel and enhanced interfaces for MusicPlaylist component
 
 ### Updated
 
-- Created interfaces (MusicPLaylist and Kernel), abstract (Secondary) and classes (Song and 1L).
-- Created contracts and implemented methods.
-
+- Corrently sorted methods in each class and beginning to rewrite map to sequence.
 ```

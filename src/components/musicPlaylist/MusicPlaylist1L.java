@@ -46,7 +46,7 @@ public class MusicPlaylist1L extends MusicPlaylistSecondary
     }
 
     @Override
-    public final Song removeSong(String s) {
+    public final Song removeSong(int s) {
         Map.Pair<String, Song> p = this.rep.remove(s);
 
         return p.value();

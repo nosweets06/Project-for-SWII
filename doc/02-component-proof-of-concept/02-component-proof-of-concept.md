@@ -207,7 +207,6 @@ requests, which could sacrifice the overall quality of your work or result in
 major rework.
 
 
-
 ### Peer Review
 
 Following the completion of this assignment, you will be assigned three
