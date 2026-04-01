@@ -6,14 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-
-## 2026.11.26
+## 2026.04.01
 
 ### Added
 
-- Designed kernel and enhanced interfaces for MusicPlaylist component
+- Designed abstract class for MusicPlaylist component
 
 ### Updated
 
-- Corrently sorted methods in each class and beginning to rewrite map to sequence.
+- Implemented abtract class methods
+
 ```
