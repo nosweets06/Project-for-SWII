@@ -5,7 +5,6 @@ package components.musicPlaylist;
  */
 public abstract class MusicPlaylistSecondary implements MusicPlaylist {
 
-    //do kernel methods go here?
     @Override
     public int findSongPosition(String x) {
         //new instance of this
@@ -36,6 +35,13 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
 
         //Creating a new temp
         MusicPlaylist temp = this.newInstance();
+        while (this.numberOfSongs() > 0) {
+            temp.addSong(this.removeLastSong());
+        }
+        while (temp.numberOfSongs() > 0) {
+            Song s = temp.removeLastSong();
+            this.addSong(s);
+        }
     }
 
     @Override
@@ -59,6 +65,19 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
         }
 
         return curr;
+
+    }
+
+    @Override
+    public final MusicPlaylist newInstance() {
+        return new MusicPlaylist1L();
+    }
+
+    @Override
+    public final void clear() {
+        while (this.numberOfSongs() > 0) {
+            this.removeLastSong();
+        }
     }
 
 }

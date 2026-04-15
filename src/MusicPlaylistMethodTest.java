@@ -1,7 +1,4 @@
-
 import components.musicPlaylist.MusicPlaylist;
-import components.musicPlaylist.MusicPlaylist1L;
-import components.musicPlaylist.Song;
 
 /**
  * Testing some methods.
@@ -18,7 +15,7 @@ public class MusicPlaylistMethodTest {
         Song s2 = new Song("Rosemary", 413);
         playlist.addSong(s2);
 
-        playlist.playAll();
+        //  playlist.playAll();
 
     }
 }

@@ -1,22 +1,24 @@
 package components.musicPlaylist;
-//pretending to use map with osu components.
 
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
 
 /**
- * {@code MusicPlaylist} represented as a {@code Map}.
+ * {@code MusicPlaylist} represented as a {@code Seqeuence}.
  */
 
-public class MusicPlaylist1L extends MusicPlaylistSecondary
-        implements MusicPlaylist {
+public class MusicPlaylist1L extends MusicPlaylistSecondary {
 
+    /** */
     /*
      * Private memebers --------------------------------
      */
 
     /**
      * Representation of {@code this}.
+     *
+     * @convention this.rep != null
+     * @correspondence playlist = this.rep
      */
     private Sequence<Song> rep;
 
@@ -58,9 +60,18 @@ public class MusicPlaylist1L extends MusicPlaylistSecondary
     }
 
     @Override
-    public final Song getSong(int n) { //change so gives position in seq
-        Song p = this.rep.entry(n);
-        return p;
+    public final int numberOfSongs() {
+        return this.rep.length();
+    }
+
+    @Override
+    public final void transferFrom(MusicPlaylist x) {
+        assert x != null : "Violation of: source is not null";
+        assert x != this : "Violation of: source is not this";
+
+        MusicPlaylist1L xHold = (MusicPlaylist1L) x;
+        this.rep = xHold.rep;
+        xHold.rep = new Sequence1L<>();
     }
 
     //no longer in kernel
