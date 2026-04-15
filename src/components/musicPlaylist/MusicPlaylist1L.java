@@ -64,6 +64,10 @@ public class MusicPlaylist1L extends MusicPlaylistSecondary {
         return this.rep.length();
     }
 
+    //are all 3 common methods
+    // supposed to go here-- transferFrom, clear and newInstance?
+    //Or what are the common methods needed in the secondary class?
+
     @Override
     public final void transferFrom(MusicPlaylist x) {
         assert x != null : "Violation of: source is not null";
