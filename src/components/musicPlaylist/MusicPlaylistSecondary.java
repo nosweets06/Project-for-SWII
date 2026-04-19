@@ -69,15 +69,87 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     }
 
     @Override
-    public final MusicPlaylist newInstance() {
-        return new MusicPlaylist1L();
+    public final boolean equals(Object obj) {
+        boolean check = true;
+
+        if (obj == null) {
+            check = false;
+        } else if (this.getClass() != obj.getClass()) {
+            check = false;
+        } else {
+            MusicPlaylist hold = (MusicPlaylist) obj;
+
+            if (this.numberOfSongs() != hold.numberOfSongs()) {
+                check = false;
+            } else {
+                MusicPlaylist tempThis = this.newInstance();
+                MusicPlaylist tempHold = hold.newInstance();
+
+                while (check && this.numberOfSongs() > 0) {
+                    Song thisSong = this.removeLastSong();
+                    Song holdSong = this.removeLastSong();
+
+                    tempThis.addSong(thisSong);
+                    tempHold.addSong(holdSong);
+
+                    if (!thisSong.equals(holdSong)) {
+                        check = false;
+                    }
+                }
+
+                while (tempThis.numberOfSongs() > 0) {
+                    this.addSong(tempThis.removeLastSong());
+                    hold.addSong(tempHold.removeLastSong());
+                }
+            }
+
+        }
+        return check;
     }
 
     @Override
-    public final void clear() {
+    public final String toString() {
+        StringBuilder hold = new StringBuilder();
+
+        MusicPlaylist temp = new MusicPlaylist1L();
+
         while (this.numberOfSongs() > 0) {
-            this.removeLastSong();
+            temp.addSong(this.removeLastSong());
+
         }
+
+        while (temp.numberOfSongs() > 0) {
+            Song s = temp.removeLastSong();
+            hold.append(s.toString());
+            hold.append(", ");
+
+            this.addSong(s);
+
+        }
+
+        hold.delete(hold.length() - 2, hold.length());
+
+        return hold.toString();
+
+    }
+
+    @Override
+    public final int hashCode() {
+        int hash = 1;
+        final int total = 31;
+
+        MusicPlaylist temp = new MusicPlaylist1L();
+
+        while (this.numberOfSongs() > 0) {
+            Song s = this.removeLastSong();
+            temp.addSong(s);
+
+            hash = total * hash + s.hashCode();
+        }
+        while (temp.numberOfSongs() > 0) {
+            this.addSong(temp.removeLastSong());
+        }
+        return hash;
     }
 
 }

@@ -18,6 +18,7 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * @requires x in {@code this}
      * @ensures x is string, |x| > 0
      */
+    @Override
     int findSongPosition(String x);
 
     /**

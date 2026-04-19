@@ -78,6 +78,21 @@ public class MusicPlaylist1L extends MusicPlaylistSecondary {
         xHold.rep = new Sequence1L<>();
     }
 
+    @Override
+    public final void clear() {
+        this.createNewRep();
+    }
+
+    @Override
+    public final MusicPlaylist newInstance() { //followed NN api
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of this type " + this.getClass());
+        }
+    }
+
     //no longer in kernel
 
     // @Override
