@@ -1,5 +1,4 @@
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 import components.musicPlaylist.MusicPlaylist;
 import components.musicPlaylist.Song;
@@ -21,9 +20,9 @@ public abstract class MusicPlaylist1LTest {
         return list;
     }
 
-    private Sequence<Song> createFromArgsRef(Song... args){
-        Sequence<Song< hold = this.constructorRef();
-        for(Song s : args){
+    private Sequence<Song> createFromArgsRef(Song... args) {
+        Sequence<Song> hold = this.constructorRef();
+        for (Song s : args) {
             hold.add(hold.length(), s);
 
         }
