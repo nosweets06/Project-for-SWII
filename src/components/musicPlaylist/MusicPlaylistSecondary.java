@@ -6,7 +6,7 @@ package components.musicPlaylist;
 public abstract class MusicPlaylistSecondary implements MusicPlaylist {
 
     @Override
-    public int findSongPosition(String x) {
+    public final int findSongPosition(String x) {
         //new instance of this
         MusicPlaylist temp = this.newInstance();
 
@@ -31,7 +31,7 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     }
 
     @Override
-    public void shuffle() {
+    public final void shuffle() {
 
         //Creating a new temp
         MusicPlaylist temp = this.newInstance();
@@ -45,7 +45,7 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     }
 
     @Override
-    public Song getSong(int x) {
+    public final Song getSong(int x) {
         //new instance of this
         MusicPlaylist temp = this.newInstance();
 
