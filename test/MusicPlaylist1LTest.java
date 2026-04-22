@@ -1,41 +1,21 @@
-import org.junit.Test;
-
 import components.musicPlaylist.MusicPlaylist;
+import components.musicPlaylist.MusicPlaylist1L;
 import components.musicPlaylist.Song;
 import components.sequence.Sequence;
+import components.sequence.Sequence1L;
 
-public abstract class MusicPlaylist1LTest {
+/**
+ * Customized JUnit test fixture for {@code MusicPlaylist}.
+ */
+public final class MusicPlaylist1LTest extends MusicPlaylistTest {
 
-    protected abstract MusicPlaylist constructorTest();
-
-    protected abstract Sequence<Song> constructorRef();
-
-    private MusicPlaylist createFromArgsTest(Song... args) {
-
-        MusicPlaylist list = this.constructorTest();
-        for (Song s : args) {
-            list.addSong(s);
-
-        }
-        return list;
+    @Override
+    protected MusicPlaylist constructorTest() {
+        return new MusicPlaylist1L();
     }
 
-    private Sequence<Song> createFromArgsRef(Song... args) {
-        Sequence<Song> hold = this.constructorRef();
-        for (Song s : args) {
-            hold.add(hold.length(), s);
-
-        }
-        return hold;
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void testAddSong() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
-
+    @Override
+    protected Sequence<Song> constructorRef() {
+        return new Sequence1L<Song>();
     }
 }
