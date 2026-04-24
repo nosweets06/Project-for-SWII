@@ -339,18 +339,18 @@ I learned to use references like api sources, homeworks, and project as a refere
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+By working on this project, I find myself more interested in software development, and applying my skills to real situations. Addtaionally it made me feel more confident in my skills.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+To stay on my path, I can use this project to help guide me to build more project, or to even expand on this one. Through practice and learning, this can help me later on when I have real projects as I build the foundation to make projects. Some mentors I have are my professors, classmates and family memebers.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
+
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -386,7 +386,6 @@ request merge (or at least tag your commits). This is not required.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
