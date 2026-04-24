@@ -1,3 +1,4 @@
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -8,12 +9,32 @@ import components.musicPlaylist.Song;
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
 
+/**
+ * JUnit test cases for MusicPlaylist.
+ */
 public abstract class MusicPlaylistTest {
 
+    /**
+     * @return protected abstract of constructorTest.
+     */
     protected abstract MusicPlaylist constructorTest();
 
+    /**
+     * @return protected abstract of constructorRef.
+     */
     protected abstract Sequence<Song> constructorRef();
 
+    /**
+    *
+    */
+    private final int fourty = 40;
+
+    /**
+     * @param args
+     *            Songs to be added.
+     * @return a new musicPlaylist using constructor.
+     *
+     */
     private MusicPlaylist createFromArgsTest(Song... args) {
         MusicPlaylist list = this.constructorTest();
         for (Song s : args) {
@@ -23,6 +44,12 @@ public abstract class MusicPlaylistTest {
         return list;
     }
 
+    /**
+     * @param args
+     *            Songs to be added.
+     * @return a new Sequence using constructor.
+     *
+     */
     private Sequence<Song> createFromArgsRef(Song... args) {
         Sequence<Song> hold = this.constructorRef();
         for (Song s : args) {
@@ -35,12 +62,12 @@ public abstract class MusicPlaylistTest {
     /** Kernel Testing */
 
     /**
-     *
+     * TrasnferFrom non empty test case.
      */
     @Test
     public void testTransferFromNonEmpty() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
 
         MusicPlaylist test = this.createFromArgsTest(a, b);
         Sequence<Song> ref = this.createFromArgsRef(a, b);
@@ -59,7 +86,7 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-     *
+     * TrasnferFrom empty test case.
      */
     @Test
     public void testTransferFromEmpty() {
@@ -78,12 +105,12 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-     *
+     * Clear non empty test case.
      */
     @Test
     public void testClearNonEmpty() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
 
         MusicPlaylist test = this.createFromArgsTest(a, b);
         Sequence<Song> ref = this.createFromArgsRef(a, b);
@@ -95,7 +122,7 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-     *
+     * Clear empty test case.
      */
     @Test
     public void testClearEmpty() {
@@ -110,13 +137,52 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-     *
+     * NewInstance non empty test case.
+     */
+    @Test
+    public void testnewInstanceNonEmpty() {
+
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+
+        MusicPlaylist test = this.createFromArgsTest(a, b);
+        Sequence<Song> ref = this.createFromArgsRef(a, b);
+
+        test.newInstance();
+
+        ref.newInstance();
+
+        assertEquals(test.numberOfSongs(), ref.length());
+
+    }
+
+    /**
+     * NewInstance empty test case.
+     */
+    @Test
+    public void testnewInstanceEmpty() {
+
+        MusicPlaylist test = this.createFromArgsTest();
+        Sequence<Song> ref = this.createFromArgsRef();
+
+        test.newInstance();
+
+        ref.newInstance();
+
+        assertEquals(test.numberOfSongs(), ref.length());
+
+    }
+
+    /** 1L methods to test. */
+
+    /**
+     * AddSong non empty test case.
      */
     @Test
     public void testAddSongNonEmpty() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
-        Song c = new Song("C", 40);
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
         MusicPlaylist test = this.createFromArgsTest(a, b);
         Sequence<Song> ref = this.createFromArgsRef(a, b);
 
@@ -130,11 +196,11 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-    *
-    */
+     * AddSong empty test case.
+     */
     @Test
     public void testAddSongEmpty() {
-        Song a = new Song("A", 40);
+        Song a = new Song("A", this.fourty);
 
         MusicPlaylist test = this.createFromArgsTest();
         Sequence<Song> ref = this.createFromArgsRef();
@@ -149,46 +215,13 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-    *
-    */
-    @Test
-    public void testRemoveSongMultiple() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
-        Song c = new Song("C", 40);
-        MusicPlaylist test = this.createFromArgsTest(a, b, c);
-        Sequence<Song> ref = this.createFromArgsRef(a, b, c);
-
-        while (test.numberOfSongs() > 0 && ref.length() > 0) {
-            assertEquals(test.removeSong(0), ref.remove(0));
-        }
-        assertEquals(test.numberOfSongs(), ref.length());
-    }
-
-    /**
-    *
-    */
-    @Test
-    public void testRemoveSongOne() {
-        Song a = new Song("A", 40);
-
-        MusicPlaylist test = this.createFromArgsTest(a);
-        Sequence<Song> ref = this.createFromArgsRef(a);
-
-        while (test.numberOfSongs() > 0 && ref.length() > 0) {
-            assertEquals(test.removeSong(0), ref.remove(0));
-        }
-        assertEquals(test.numberOfSongs(), ref.length());
-    }
-
-    /**
-    *
-    */
+     * RemoveLastSong non empty test case.
+     */
     @Test
     public void testRemoveLastSongNonEmpty() {
 
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
 
         MusicPlaylist test = this.createFromArgsTest(a, b);
         Sequence<Song> ref = this.createFromArgsRef(a, b);
@@ -200,12 +233,12 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-    *
-    */
+     * RemoveLastSong to empty test case.
+     */
     @Test
     public void testRemoveLastSongToEmpty() {
 
-        Song a = new Song("A", 40);
+        Song a = new Song("A", this.fourty);
         MusicPlaylist test = this.createFromArgsTest(a);
         Sequence<Song> ref = this.createFromArgsRef(a);
 
@@ -216,8 +249,56 @@ public abstract class MusicPlaylistTest {
     }
 
     /**
-    *
-    */
+     * RemoveSong non empty test case.
+     */
+    @Test
+    public void testRemoveSongMultiple() {
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
+        MusicPlaylist test = this.createFromArgsTest(a, b, c);
+        Sequence<Song> ref = this.createFromArgsRef(a, b, c);
+
+        while (test.numberOfSongs() > 0 && ref.length() > 0) {
+            assertEquals(test.removeSong(0), ref.remove(0));
+        }
+        assertEquals(test.numberOfSongs(), ref.length());
+    }
+
+    /**
+     * RemoveSong non empty (one) test case.
+     */
+    @Test
+    public void testRemoveSongOne() {
+        Song a = new Song("A", this.fourty);
+
+        MusicPlaylist test = this.createFromArgsTest(a);
+        Sequence<Song> ref = this.createFromArgsRef(a);
+
+        while (test.numberOfSongs() > 0 && ref.length() > 0) {
+            assertEquals(test.removeSong(0), ref.remove(0));
+        }
+        assertEquals(test.numberOfSongs(), ref.length());
+    }
+
+    /**
+     * NumberOfSongs non empty test case.
+     */
+
+    @Test
+    public void testNumberOfSongsNonEmpty() {
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
+        MusicPlaylist test = this.createFromArgsTest(a, b, c);
+        Sequence<Song> ref = this.createFromArgsRef(a, b, c);
+
+        assertEquals(test.numberOfSongs(), ref.length());
+    }
+
+    /**
+     * NumberOfSongs empty test case.
+     */
     @Test
     public void testNumberOfSongsEmpty() {
 
@@ -227,18 +308,93 @@ public abstract class MusicPlaylistTest {
         assertEquals(test.numberOfSongs(), ref.length());
     }
 
+    //making secondary tests cases was difficult.
     /**
-    *
-    */
+     * FindSongPosition non empty test case.
+     */
     @Test
-    public void testNumberOfSongsNonEmpty() {
-        Song a = new Song("A", 40);
-        Song b = new Song("B", 40);
-        Song c = new Song("C", 40);
+    public void testFindSongPositionNonEmpty() {
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
         MusicPlaylist test = this.createFromArgsTest(a, b, c);
         Sequence<Song> ref = this.createFromArgsRef(a, b, c);
 
         assertEquals(test.numberOfSongs(), ref.length());
+        int i = 0;
+
+        while (ref.length() > 0) {
+
+            Song refHold = ref.remove(0);
+
+            if (test.findSongPosition("B") == (refHold.duration())) {
+                assertEquals(test.findSongPosition("B"), i);
+            }
+            i++;
+
+        }
+
     }
 
+    /**
+     * FindSongPosition non empty (one) test case.
+     */
+    @Test
+    public void testFindSongPositionOne() {
+        Song a = new Song("A", this.fourty);
+
+        MusicPlaylist test = this.createFromArgsTest(a);
+        Sequence<Song> ref = this.createFromArgsRef(a);
+
+        test.findSongPosition("A");
+
+        Song refHold = ref.remove(0);
+
+        assertEquals(test.numberOfSongs(), ref.length());
+
+        while (ref.length() > 0
+                && test.findSongPosition("A") != (refHold.duration())) {
+            refHold = ref.remove(0);
+        }
+        assertEquals(test.findSongPosition("A"), refHold.duration());
+    }
+
+    /**
+     * Shuffle non empty test case. Not sure how ot test correctly.
+     */
+    @Test
+    public void testShuffle() {
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
+        MusicPlaylist test = this.createFromArgsTest(a, b, c);
+        MusicPlaylist test2 = test;
+
+        test.shuffle();
+
+        assertEquals(test, test2); //??
+
+    }
+
+    /**
+     * Shuffle non empty test case. Not sure how ot test correctly.
+     */
+    @Test
+    public void testGetSongnonEmpty() {
+        Song a = new Song("A", this.fourty);
+        Song b = new Song("B", this.fourty);
+        Song c = new Song("C", this.fourty);
+        MusicPlaylist test = this.createFromArgsTest(a, b, c);
+        Sequence<Song> ref = this.createFromArgsRef(a, b, c);
+
+        Song holdTest = test.getSong(1);
+        Song refHold = ref.remove(0);
+        assertEquals(test.numberOfSongs(), ref.length());
+
+        while (ref.length() > 0 && holdTest.equals(refHold)) {
+            refHold = ref.remove(0);
+
+        }
+        assertEquals(holdTest, refHold);
+    }
 }
