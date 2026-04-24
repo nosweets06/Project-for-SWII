@@ -140,7 +140,7 @@ to see them. If you don't like this workflow, you may try following the
 rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
+
 
 ## Assignment Tasks
 
@@ -306,18 +306,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I feel Like I better understand software development as I was able oto pretty much build a component similar to sequence but my own twist of a different arugment Song. So this helped me further understand the structure of the interfaces and subinterfaces, abtract and classes.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+I didn't know how I should be testing my component but I ending up use a sequence ot test it with since, it had sequence under the hood.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I don't my presceptive has change as the projects are simiarlt o the protfolio but with more freedom, which is nice. I stil do enjoy software, though developing can be confusing at times, but the problom solving is fun.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -325,12 +325,15 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I learned to use references like api sources, homeworks, and project as a reference. I problem solved through my errors, and I presisent through even if the problem took hours to solve. I was able to build more of my knowlegde of what we learn in class. Lastly, it also has helped me refine my knowlegde.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+-Used API documentation, coursework and projects to reference
+-Applied problem-solving skills to issues in code
+-Worked through difficult challenges
+- Expanded and reinforced course learned concepts
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
